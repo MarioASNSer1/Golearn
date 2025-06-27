@@ -1,0 +1,148 @@
+/* =============================
+   GoLearn – Estilo global
+   ============================= */
+:root {
+  --primary: #0FBFB0;      /* turquesa */
+  --dark-bg: #101012;      /* casi negro */
+  --light-bg: #E0E3E6;     /* gris muy claro */
+  --accent: #D4B46A;       /* dorado */
+  --text-main: #222;
+  --text-light: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  --transition: .25s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--light-bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* ------------- Layout básicos ------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--primary);
+  color: var(--text-light);
+  box-shadow: var(--shadow);
+}
+
+header h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+nav a {
+  color: var(--text-light);
+  margin-left: 1rem;
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+nav a:hover::after,
+nav a.router-link-active::after,
+nav a.active::after {
+  width: 100%;
+}
+
+main,
+section,
+form,
+article {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ------------- Footer ------------- */
+footer {
+  background: var(--dark-bg);
+  color: var(--accent);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  margin-top: 4rem;
+}
+
+/* ------------- Botones ------------- */
+button,
+a.btn {
+  background: var(--accent);
+  color: var(--dark-bg);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover,
+a.btn:hover {
+  background: var(--primary);
+  color: var(--text-light);
+}
+
+/* ------------- Formularios ------------- */
+input,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin: 0.4rem 0 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary);
+}
+
+/* ------------- Tarjetas de curso ------------- */
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* ------------- Utilidades ------------- */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
